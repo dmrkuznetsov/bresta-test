@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrestaTest.Core.Parser
+namespace BrestaTest.Core.Parser.Exceptions
 {
-    internal class BrestaParser
+    internal class InvalidBrestaFormatException : Exception
     {
     }
 }

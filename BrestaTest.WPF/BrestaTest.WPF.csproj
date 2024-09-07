@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BrestaTest.Core\BrestaTest.Core.csproj" />
+  </ItemGroup>
+
 </Project>
