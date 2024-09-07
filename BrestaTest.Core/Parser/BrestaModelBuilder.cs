@@ -26,7 +26,7 @@ namespace BrestaTest.Core.Parser
                         if (!tokens.TryGetValue("accuracy", out Token accuracyToken)) throw new InvalidBrestaFormatException();
                         if (!tokens.TryGetValue("algo", out Token algoToken)) throw new InvalidBrestaFormatException();
                         if (!tokens.TryGetValue("pos", out Token posToken)) throw new InvalidBrestaFormatException();
-                        if (!tokens.TryGetValue("pos", out Token sizeToken)) throw new InvalidBrestaFormatException();
+                        if (!tokens.TryGetValue("size", out Token sizeToken)) throw new InvalidBrestaFormatException();
 
                         if (!tokens.TryGetValue("pos", out Token thicknessToken)) throw new InvalidBrestaFormatException();
                         if (!tokens.TryGetValue("thicknessCurrent", out Token thicknessCurrentToken)) throw new InvalidBrestaFormatException();

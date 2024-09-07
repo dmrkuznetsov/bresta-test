@@ -7,7 +7,7 @@
         xmlns:vms="clr-namespace:BrestaTest.WPF.ModelViews"
         xmlns:controls="clr-namespace:BrestaTest.WPF.Controls"
         mc:Ignorable="d"
-        Title="BrestaTest" Height="450" Width="800">
+        Title="BrestaTest" Height="450" Width="1200">
     <Window.DataContext>
         <vms:MainModelView/>
     </Window.DataContext>
@@ -31,9 +31,15 @@
         <Button HorizontalAlignment="Right" Width="100" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Content="Загрузить" Margin="0,20,0,0" Command="{Binding LoadScalesCmd}" IsEnabled="{Binding LongProcessIsNotActive, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="0" Grid.Column="2" Width="50" Content="..." Command="{Binding SelectBoardsDirectoryCmd}" IsEnabled="{Binding LongProcessIsNotActive, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="1" Grid.Column="2" Width="50" Content="..." Command="{Binding SelectScalesDirCmd}" IsEnabled="{Binding LongProcessIsNotActive, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <controls:ScalesHolder Grid.Row="3" Grid.ColumnSpan="3" ScalesCollection="{Binding Scales, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+        <Border x:Name="CanvasBorder" Grid.Row="3" Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="1" Margin="0,10,0,0">
+            <StackPanel>
+                <Canvas x:Name="ScalesHolder" 
+                        Height="{Binding ActualHeight, ElementName=CanvasBorder, UpdateSourceTrigger=PropertyChanged}"
+                        Width="{Binding ActualWidth, ElementName=CanvasBorder, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Border>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
-            <Button Content="Сохранить" Padding="10,0,10,0" IsEnabled="{Binding LongProcessIsNotActive, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+            <!--<Button Content="Сохранить" Padding="10,0,10,0" IsEnabled="{Binding LongProcessIsNotActive, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />-->
         </StackPanel>
     </Grid>
 </Window>
